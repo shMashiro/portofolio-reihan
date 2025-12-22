@@ -1,0 +1,132 @@
+{
+  "contactBar": {
+    "contactItems": [
+      {
+        "type": "email",
+        "label": "reihanauliadarojat@gmail.com",
+        "icon": "/images/icon/mail-icon.svg",
+        "link": "mailto:reihanauliadarojat@gmail.com"
+      },
+      {
+        "type": "phone",
+        "label": "+62 851-5638-5120",
+        "icon": "/images/icon/call-icon.svg",
+        "link": "tel:+6285156385120"
+      },
+      {
+        "type": "address",
+        "label": "Kabupaten Bandung, Jawa Barat",
+        "icon": "/images/icon/web-icon.svg",
+        "link": "#!"
+      }
+    ],
+    "socialItems": [
+      {
+        "platform": "Whatsapp",
+        "icon": "/images/icon/whatsapp.svg",
+        "link": "https://wa.me/6285156385120"
+      },
+      {
+        "platform": "Linkedin",
+        "icon": "/images/icon/linkedin-icon.svg",
+        "link": "https://www.linkedin.com/in/reihan-aulia-darojat-96a583322/"
+      },
+      {
+        "platform": "Instagram",
+        "icon": "/images/icon/instagram.svg",
+        "link": "https://www.instagram.com/re_tzu_/"
+      }
+    ]
+  },
+  "educationData": {
+    "education": [
+      {
+        "title": "SEKOLAH TINGGI TEKNOLOGI BANDUNG - Teknik Informatika (2021 - 2025)",
+        "description": {
+          "en": "GPA 3.62. Learned web development with OOP concepts using native web or Laravel framework.",
+          "id": "IPK 3,62. Mempelajari web development dengan konsep OOP menggunakan web native ataupun framework laravel."
+        },
+        "degree": "/bachelor/Ijazah Sarjana Informatika - Reihan Aulia Darojat.pdf",
+        "transcript": "/bachelor/File Transkrip Nilai Sarjana Informatika - Reihan Aulia Darojat.pdf"
+      }
+    ],
+    "skills": [
+      {
+        "name": "UI App Designer",
+        "icon": "/images/home/education-skill/figma-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Web Development",
+        "icon": "/images/home/education-skill/photoshop-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "IT Support",
+        "icon": "/images/home/education-skill/sketch-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "Machine Learning",
+        "icon": "/images/home/education-skill/adobe-icon.svg",
+        "rating": 4
+      }
+    ]
+  },
+  "contactLinks": {
+    "socialLinks": [
+      {
+        "title": "Dribble",
+        "href": "/"
+      },
+      {
+        "title": "Facebook",
+        "href": "/"
+      },
+      {
+        "title": "LinkedIn",
+        "href": "/"
+      }
+    ],
+    "contactInfo": [
+      {
+        "type": "email",
+        "label": "reihanauliadarojat@gmail.com",
+        "link": "mailto:reihanauliadarojat@gmail.com"
+      },
+      {
+        "type": "phone",
+        "label": "+62 851-5638-5120",
+        "link": "tel:+6285156385120"
+      }
+    ]
+  },
+  "experienceData": {
+    "experiences": [
+      {
+        "year": "Sept 2024 - Dec 2024",
+        "title": "Studi Independen Bersertifikat (MSIB)",
+        "company": "BANGKIT 2024 BATCH 2 - by Google, GOTO, Traveloka",
+        "type": "Machine Learning Path",
+        "description": {
+          "en": "Optimized Model Architecture using label encoding and complex data augmentation to achieve target accuracy without overfitting",
+          "id": "Melakukan Optimasi pada Arsitektur Model Menggunakan Encoding label dan Augmentasi data yang lebih kompleks agar mencapai target akurasi tanpa mengalami overfit"
+        },
+        "certificate": "/certificate/[Bangkit 2024 Batch 2] Certificate - M764B4KY3735.pdf",
+        "transcript": "/certificate/[Bangkit 2024 Batch 2] Final Transcript - M764B4KY3735.pdf"
+      },
+      {
+        "year": "Sept 2022 - January 2023",
+        "title": "Kredensial Mikro Mahasiswa Indonesia(KMMI)",
+        "company": "Universitas Indonesia",
+        "type": "Keamanan Jaringan Dan Komputer",
+        "description": {
+          "en": "Analyzed data intrusion to identify vulnerabilities and applied incident response models to manage network security incidents",
+          "id": "Menganalisis Intrusi data untuk identifikasi kerentanan dan mengaplikasikan respon model insiden untuk mengelola insiden keamanan jaringan"
+        },
+        "certificate": "/certificate/115 Reihan Aulia Darojat Keamanan Jaringan Komputer dan Praktikum KMMI 2022 (1)-1.pdf",
+        "transcript": "/certificate/115 Reihan Aulia Darojat Keamanan Jaringan Komputer dan Praktikum KMMI 2022 (1)-2.pdf"
+      }
+    ]
+  }
+}

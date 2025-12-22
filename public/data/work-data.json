@@ -1,0 +1,19 @@
+{
+  "workData": [
+    {
+      "image": "/project/Sortify1.png",
+      "images": [
+        "/project/Sortify1.png",
+        "/project/Sortify2.png",
+        "/project/Sortify3.png"
+      ],
+      "title": "Sortify (Smart Organizing and Recycling Trash)",
+      "client": "Bangkit Academy",
+      "slug": "#",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "location": "Jakarta, Indonesia",
+      "startDate": "Sept 2024",
+      "endDate": "Dec 2024"
+    }
+  ]
+}
