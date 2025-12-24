@@ -60,7 +60,7 @@ const LatestWork = () => {
             <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
               <h2>{t.latestWork.title}</h2>
               <p className="text-xl text-orange-500">{t.latestWork.subtitle}</p>
-              <p className="text-xl text-orange-500">{t.latestWork.subtitle}</p>
+
             </div>
 
             <div className="flex flex-wrap gap-4 mb-10 justify-center sm:justify-start">
