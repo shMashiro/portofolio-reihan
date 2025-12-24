@@ -11,7 +11,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -116,7 +116,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     <div className="prose max-w-none">
                         <h4 className="text-lg font-bold mb-2">About Project</h4>
                         <p className="text-gray-600 leading-relaxed text-lg">
-                            {project.description}
+                            {project.description[language]}
                         </p>
                     </div>
                 </div>

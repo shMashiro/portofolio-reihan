@@ -10,8 +10,11 @@
       "title": "Sortify (Smart Organizing and Recycling Trash)",
       "client": "Bangkit Academy",
       "slug": "#",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "location": "Jakarta, Indonesia",
+      "description": {
+        "en": "During the BANGKIT 2024 Batch 2 Machine Learning program, an application named Sortify (Sorting & Recycling Trash Identification For You) was developed, leveraging a deep learning model based on Convolutional Neural Networks (CNN) with transfer learning using the Inception V3 architecture to automatically classify waste types. The development was supported by a public dataset from Kaggle, field observations, interviews with the Bekasi Regency Environmental Agency. The development process followed the Scrum methodology, including Sprint Planning, Daily Scrum, and Product Backlog management. Model evaluation using precision, recall, and F1-score metrics revealed key challenges in classifying visually similar waste categories, such as brown-glass and green-glass.",
+        "id": "Selama mengikuti program BANGKIT 2024 Batch 2 di bidang Machine Learning, dikembangkan sebuah aplikasi bernama Sortify (Sorting & Recycling Trash Identification For You) yang memanfaatkan model deep learning berbasis Convolutional Neural Network (CNN) dengan pendekatan transfer learning menggunakan arsitektur Inception V3 untuk mengklasifikasikan jenis sampah secara otomatis. Pengembangan didukung oleh dataset publik dari Kaggle, observasi lapangan, serta wawancara dengan Dinas Lingkungan Hidup Kabupaten Bekasi. Proses pengembangan mengikuti metodologi Scrum, mencakup Sprint Planning, Daily Scrum, dan pengelolaan Product Backlog. Evaluasi model menggunakan metrik presisi, recall, dan F1-score mengungkap tantangan utama pada klasifikasi kategori sampah dengan ciri visual yang mirip, seperti brown-glass dan green-glass."
+      },
+      "location": "Online",
       "startDate": "Sept 2024",
       "endDate": "Dec 2024"
     }
