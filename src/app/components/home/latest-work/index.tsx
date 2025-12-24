@@ -9,16 +9,27 @@ import ProjectModal from "../../ui/ProjectModal";
 const LatestWork = () => {
   const { t } = useLanguage();
   const [workData, setWorkData] = useState<any>(null);
+  const [filteredData, setFilteredData] = useState<any>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [tags, setTags] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch(getDataPath("/data/work-data.json"));
         if (!res.ok) throw new Error("Failed to fetch");
+
         const data = await res.json();
         setWorkData(data?.workData);
+        setFilteredData(data?.workData);
+
+        // Extract unique tags
+        const allTags = data?.workData?.reduce((acc: any, curr: any) => {
+          return [...acc, ...(curr.tags || [])];
+        }, []);
+        setTags(["All", ...Array.from(new Set(allTags)) as string[]]);
       } catch (error) {
         console.error("Error fetching services:", error);
       }
@@ -26,6 +37,15 @@ const LatestWork = () => {
 
     fetchData();
   }, []);
+
+  const handleFilterClick = (tag: string) => {
+    setActiveFilter(tag);
+    if (tag === "All") {
+      setFilteredData(workData);
+    } else {
+      setFilteredData(workData.filter((item: any) => item.tags?.includes(tag)));
+    }
+  };
 
   const handleProjectClick = (project: any) => {
     setSelectedProject(project);
@@ -40,9 +60,26 @@ const LatestWork = () => {
             <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
               <h2>{t.latestWork.title}</h2>
               <p className="text-xl text-orange-500">{t.latestWork.subtitle}</p>
+              <p className="text-xl text-orange-500">{t.latestWork.subtitle}</p>
             </div>
+
+            <div className="flex flex-wrap gap-4 mb-10 justify-center sm:justify-start">
+              {tags.map((tag, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleFilterClick(tag)}
+                  className={`px-6 py-2 rounded-full border border-primary transition-all duration-300 font-medium ${activeFilter === tag
+                    ? "bg-primary text-white"
+                    : "bg-transparent text-primary hover:bg-primary hover:text-white"
+                    }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
-              {workData?.map((value: any, index: any) => {
+              {filteredData?.map((value: any, index: any) => {
                 return (
                   <div
                     key={index}
@@ -85,6 +122,13 @@ const LatestWork = () => {
                             />
                           </svg>
                         </span>
+                      </div>
+                      <div className="absolute bottom-4 left-4 z-10 flex flex-wrap gap-2">
+                        {value?.tags?.map((tag: string, idx: number) => (
+                          <span key={idx} className="bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-xs font-semibold shadow-sm">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                     <div className="flex flex-col gap-0 xl:gap-2">

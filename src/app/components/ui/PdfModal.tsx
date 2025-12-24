@@ -16,10 +16,20 @@ const PdfModal = ({ isOpen, onClose, title, pdfUrl }: PdfModalProps) => {
         } else {
             document.body.style.overflow = "unset";
         }
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (isOpen && e.key === "Escape") {
+                onClose();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
         return () => {
             document.body.style.overflow = "unset";
+            window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [isOpen]);
+    }, [isOpen, onClose]);
 
     if (!isOpen || !pdfUrl) return null;
 

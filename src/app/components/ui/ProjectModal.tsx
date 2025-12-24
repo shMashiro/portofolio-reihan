@@ -15,29 +15,49 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-            setCurrentImageIndex(0);
-        } else {
-            document.body.style.overflow = "unset";
-        }
-        return () => {
-            document.body.style.overflow = "unset";
-        };
-    }, [isOpen]);
-
-    if (!isOpen || !project) return null;
-
-    const images = project.images && project.images.length > 0 ? project.images : [project.image];
+    const images = (project?.images && project.images.length > 0) ? project.images : (project?.image ? [project.image] : []);
 
     const nextImage = () => {
+        if (images.length === 0) return;
         setCurrentImageIndex((prev: number) => (prev + 1) % images.length);
     };
 
     const prevImage = () => {
+        if (images.length === 0) return;
         setCurrentImageIndex((prev: number) => (prev - 1 + images.length) % images.length);
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!isOpen) return;
+            switch (e.key) {
+                case "Escape":
+                    onClose();
+                    break;
+                case "ArrowLeft":
+                    prevImage();
+                    break;
+                case "ArrowRight":
+                    nextImage();
+                    break;
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = "unset";
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isOpen]);
+
+    if (!isOpen || !project) return null;
 
     return (
         <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
@@ -54,7 +74,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                         src={getImgPath(images[currentImageIndex])}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                     />
 
                     {images.length > 1 && (
@@ -77,7 +97,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                                     <button
                                         key={idx}
                                         onClick={() => setCurrentImageIndex(idx)}
-                                        className={`w-2 h-2 rounded-full transition-all overflow-hidden ${idx === currentImageIndex ? 'bg-white w-4' : 'bg-white/50 hover:bg-white/80'}`}
+                                        className={`w-2 h-2 rounded-full transition-all overflow-hidden ${idx === currentImageIndex ? 'bg-primary w-4' : 'bg-primary/50 hover:bg-primary/80'}`}
                                     >
                                         <span className="relative z-10 block w-full h-full"></span>
                                     </button>
