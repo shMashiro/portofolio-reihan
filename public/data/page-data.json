@@ -23,17 +23,17 @@
     "socialItems": [
       {
         "platform": "Whatsapp",
-        "icon": "/images/icon/whatsapp.svg",
+        "icon": "https://api.iconify.design/ic:baseline-whatsapp.svg?color=%23FE4300",
         "link": "https://wa.me/6285156385120"
       },
       {
         "platform": "Linkedin",
-        "icon": "/images/icon/linkedin-icon.svg",
+        "icon": "https://api.iconify.design/mdi:linkedin.svg?color=%23FE4300",
         "link": "https://www.linkedin.com/in/reihan-aulia-darojat-96a583322/"
       },
       {
         "platform": "Instagram",
-        "icon": "/images/icon/instagram.svg",
+        "icon": "https://api.iconify.design/mdi:instagram.svg?color=%23FE4300",
         "link": "https://www.instagram.com/re_tzu_/"
       }
     ]
@@ -54,22 +54,38 @@
       {
         "name": "UI App Designer",
         "icon": "/images/home/education-skill/figma-icon.svg",
-        "rating": 5
+        "rating": 5,
+        "description": {
+          "en": "Designing intuitive and visually appealing user interfaces for mobile and web applications.",
+          "id": "Merancang antarmuka pengguna yang intuitif dan menarik secara visual untuk aplikasi seluler dan web."
+        }
       },
       {
         "name": "Web Development",
-        "icon": "/images/home/education-skill/photoshop-icon.svg",
-        "rating": 5
+        "icon": "/images/home/education-skill/vscode.png",
+        "rating": 5,
+        "description": {
+          "en": "Building responsive and robust web applications using modern technologies.",
+          "id": "Membangun aplikasi web yang responsif dan tangguh menggunakan teknologi modern."
+        }
       },
       {
         "name": "IT Support",
-        "icon": "/images/home/education-skill/sketch-icon.svg",
-        "rating": 4
+        "icon": "https://api.iconify.design/material-symbols:support-agent.svg?color=%23FE4300",
+        "rating": 4,
+        "description": {
+          "en": "Providing technical assistance and support for computer systems, hardware, and software.",
+          "id": "Memberikan bantuan teknis dan dukungan untuk sistem komputer, perangkat keras, dan perangkat lunak."
+        }
       },
       {
         "name": "Machine Learning",
-        "icon": "/images/home/education-skill/adobe-icon.svg",
-        "rating": 4
+        "icon": "/images/home/education-skill/tensorflow.svg",
+        "rating": 4,
+        "description": {
+          "en": "Developing and implementing machine learning models to solve complex problems.",
+          "id": "Mengembangkan dan menerapkan model machine learning untuk memecahkan masalah yang kompleks."
+        }
       }
     ]
   },
@@ -126,6 +142,30 @@
         },
         "certificate": "/certificate/115 Reihan Aulia Darojat Keamanan Jaringan Komputer dan Praktikum KMMI 2022 (1)-1.pdf",
         "transcript": "/certificate/115 Reihan Aulia Darojat Keamanan Jaringan Komputer dan Praktikum KMMI 2022 (1)-2.pdf"
+      },
+      {
+        "year": "2 - 24 March 2024",
+        "title": "Studi Independen",
+        "company": "Samsung Innovation Campus x Skilvul",
+        "type": "Coding and Programming",
+        "description": {
+          "en": "Learned the basics and further development of Python programming, as well as algorithm and data structure concepts. The curriculum is designed to build a strong programming foundation through practical and structured approach.",
+          "id": "mempelajari dasar-dasar dan pengembangan lebih lanjut pemrograman Python, serta konsep algoritma dan struktur data. Kurikulum dirancang untuk membangun fondasi pemrograman yang kuat melalui pendekatan praktis dan terstruktur."
+        },
+        "certificate": "/certificate/Sertifikat Stage 1 - Samsung Innovation Campus Batch 5 (2023_2024)-1.pdf",
+        "transcript": "/certificate/Sertifikat Stage 1 - Samsung Innovation Campus Batch 5 (2023_2024)-2.pdf"
+      },
+      {
+        "year": "20 - 27 April 2024",
+        "title": "Studi Independen",
+        "company": "Samsung Innovation Campus x Skilvul",
+        "type": "Internet of Things (IoT)",
+        "description": {
+          "en": "introduction and application of the concept of the Internet of Things (IoT), a technology that connects physical devices to the internet for real-time data collection and exchange.",
+          "id": "pengenalan dan penerapan konsep Internet of Things (IoT), teknologi yang menghubungkan perangkat fisik ke internet untuk pengumpulan dan pertukaran data secara real-time."
+        },
+        "certificate": "/certificate/Sertifikat Stage 2 - Samsung Innovation Campus Batch 5 (2023_2024)-1.pdf",
+        "transcript": "/certificate/Sertifikat Stage 2 - Samsung Innovation Campus Batch 5 (2023_2024)-2.pdf"
       }
     ]
   }

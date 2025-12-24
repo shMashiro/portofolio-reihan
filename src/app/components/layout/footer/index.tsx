@@ -13,23 +13,14 @@ const Footer = () => {
             <div className="flex-grow h-px bg-black" />
           </div>
           <p className="text-secondary">
-            Designed by{" "}
+            Tribute to{" "}
             <a
               href="https://getnextjstemplates.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              getnextjstemplates
-            </a>{" "}
-            • Distributed by{" "}
-            <a
-              href="https://themewagon.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              ThemeWagon
+              nextjs
             </a>
           </p>
         </div>

@@ -39,7 +39,8 @@ export const dictionary = {
             email: "Email *",
             message: "Message *",
             send: "Send Now",
-            success: "Great!!! Email has been Successfully Sent. We will get in touch asap."
+            success: "Great!!! Email has been Successfully Sent. We will get in touch asap.",
+            readyToWork: "Ready to work together? Get in touch on:"
         },
     },
     id: {
@@ -82,7 +83,8 @@ export const dictionary = {
             email: "Email *",
             message: "Pesan *",
             send: "Kirim Sekarang",
-            success: "Hebat!!! Email berhasil dikirim. Kami akan segera menghubungi Anda."
+            success: "Hebat!!! Email berhasil dikirim. Kami akan segera menghubungi Anda.",
+            readyToWork: "Siap untuk bekerja sama? Hubungi di:"
         },
     },
 };

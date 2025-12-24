@@ -8,13 +8,6 @@ import { useLanguage } from "@/context/LanguageContext";
 const Contact = () => {
   const { t } = useLanguage();
   const [contactData, setContactData] = useState<any>(null);
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    number: "",
-    email: "",
-    message: "",
-  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +15,7 @@ const Contact = () => {
         const res = await fetch(getDataPath("/data/page-data.json"));
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
-        setContactData(data?.contactLinks);
+        setContactData(data?.contactBar);
       } catch (error) {
         console.error("Error fetching services:", error);
       }
@@ -30,43 +23,6 @@ const Contact = () => {
 
     fetchData();
   }, []);
-
-  const reset = () => {
-    formData.name = "";
-    formData.number = "";
-    formData.email = "";
-    formData.message = "";
-  };
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    fetch("https://formsubmit.co/ajax/bhainirav772@gmail.com", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        name: formData.name,
-        number: formData.number,
-        email: formData.email,
-        message: formData.message,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setSubmitted(data.success);
-        reset();
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
 
   return (
     <section className="no-print">
@@ -76,120 +32,34 @@ const Contact = () => {
             <h2>{t.contact.title}</h2>
             <p className="text-xl text-orange-500">{t.contact.subtitle}</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-7 sm:gap-12">
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <label htmlFor="name" className="label">
-                      {t.contact.name}
-                    </label>
-                    <input
-                      required
-                      className="input"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
+
+          <div className="flex flex-col items-center gap-10">
+            <h4 className="text-center font-bold text-3xl md:text-5xl">{t.contact.readyToWork}</h4>
+
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+              {contactData?.socialItems?.map((value: any, index: any) => {
+                return (
+                  <div key={index} className="group">
+                    <Link
+                      href={value?.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center gap-4 hover:scale-110 transition-transform duration-300"
+                    >
+                      <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-full flex items-center justify-center p-4 border border-gray-100 group-hover:border-primary transition-colors">
+                        <Image
+                          src={getImgPath(value?.icon)}
+                          alt={value?.platform}
+                          width={40}
+                          height={40}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <p className="text-lg font-medium text-secondary group-hover:text-primary transition-colors">{value?.platform}</p>
+                    </Link>
                   </div>
-                  <div>
-                    <label htmlFor="number" className="label">
-                      {t.contact.phone}
-                    </label>
-                    <input
-                      required
-                      className="input"
-                      id="number"
-                      type="number"
-                      name="number"
-                      value={formData.number}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="label">
-                    {t.contact.email}
-                  </label>
-                  <input
-                    required
-                    className="input"
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="label">
-                    {t.contact.message}
-                  </label>
-                  <textarea
-                    required
-                    className="input"
-                    name="message"
-                    id="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={2}
-                  />
-                </div>
-                {submitted && (
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={getImgPath("/images/icon/success-icon.svg")}
-                      alt="success-icon"
-                      width={30}
-                      height={30}
-                    />
-                    <p className="text-secondary">
-                      {t.contact.success}
-                    </p>
-                  </div>
-                )}
-                <button
-                  type="submit"
-                  className="relative overflow-hidden cursor-pointer w-fit py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
-                >
-                  <span className="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
-                    {t.contact.send}
-                  </span>
-                </button>
-              </div>
-            </form>
-            <div className="flex flex-col sm:flex-row md:flex-col justify-between gap-5 md:gap-20 items-center md:items-end">
-              <div className="flex flex-wrap flex-row md:flex-col items-start md:items-end gap-4 md:gap-6">
-                {contactData?.socialLinks?.map((value: any, index: any) => {
-                  return (
-                    <div key={index}>
-                      <Link
-                        className="text-base sm:text-lg font-normal text-secondary hover:text-primary"
-                        onClick={(e) => e.preventDefault()}
-                        href={"#!"}
-                      >
-                        {value?.title}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="flex flex-wrap justify-center gap-5 lg:gap-11 items-end">
-                {contactData?.contactInfo?.map((value: any, index: any) => {
-                  return (
-                    <div key={index}>
-                      <Link
-                        onClick={(e) => e.preventDefault()}
-                        href={"#!"}
-                        className="text-base lg:text-lg text-black font-normal border-b border-black pb-3 hover:text-primary hover:border-primary"
-                      >
-                        {value?.label}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>

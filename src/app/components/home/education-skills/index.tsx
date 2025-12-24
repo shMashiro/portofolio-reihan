@@ -86,40 +86,26 @@ const EducationSkills = () => {
                   );
                 })}
               </div>
-              <div className="grid grid-cols-2 xs:grid-cols-3 gap-5 xl:gap-7 w-full">
+              <div className="grid grid-cols-2 gap-x-5 gap-y-16 xl:gap-x-7 xl:gap-y-20 w-full mt-10">
                 {educationData?.skills?.map((value: any, index: any) => {
                   return (
                     <div
                       key={index}
-                      className="p-4 xl:p-6 border border-softGray rounded-lg flex flex-col gap-5 sm:gap-10 items-center justify-between"
+                      className="relative pt-12 p-4 xl:p-6 border border-primary rounded-lg flex flex-col items-center gap-4 text-center group hover:shadow-lg transition-all duration-300"
                     >
-                      <div className="flex flex-col items-center gap-5">
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full">
                         <Image
                           src={getImgPath(value?.icon)}
                           alt="icon"
-                          width={70}
-                          height={70}
+                          width={60}
+                          height={60}
+                          className="object-contain"
                         />
-                        <p className="text-black font-normal">{value?.name}</p>
                       </div>
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <svg
-                            key={i}
-                            width="9"
-                            height="9"
-                            viewBox="0 0 9 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              width="9"
-                              height="9"
-                              rx="4.5"
-                              fill={i < value?.rating ? "#FE4300" : "#C0D8E0"}
-                            />
-                          </svg>
-                        ))}
+
+                      <div className="flex flex-col gap-2 mt-4">
+                        <p className="text-black font-bold text-lg">{value?.name}</p>
+                        <p className="text-gray-600 text-sm">{value?.description?.[language]}</p>
                       </div>
                     </div>
                   );
