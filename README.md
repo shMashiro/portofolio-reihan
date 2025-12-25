@@ -1,46 +1,100 @@
-# Resume - Free Next.js Resume Website Template
-#### Preview
+PORTOFOLIO REIHAN AULIA DAROJAT
 
- - [Demo](https://themewagon.github.io/Resume-Nextjs/)
+Web portfolio pribadi untuk menampilkan profil, skill, pendidikan, pengalaman, dan karya.
+Live Demo: https://portofolio-reihan-sepia.vercel.app/
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/resume-nextjs/)
+--------------------------------------------------
 
+TENTANG SAYA
 
-## Getting Started
+Saya Reihan Aulia Darojat, seorang Junior Machine Learning Developer dan Front-End Developer.
+Lulusan Informatics Engineering dengan ketertarikan pada Machine Learning, Web Development,
+UI Design, dan pengembangan aplikasi modern.
 
-Clone from GitHub 
-```bash
-git clone https://github.com/themewagon/Resume-Nextjs.git
-```
+Website ini dibuat sebagai media personal branding sekaligus dokumentasi karya dan kemampuan.
 
-Install dependencies:
-```bash
-npm install
-```
+--------------------------------------------------
 
-Run development server:
-```bash
-npm run dev
-```
+TEKNOLOGI YANG DIGUNAKAN
 
-Build for production:
-```bash
-npm run build
-```
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS / CSS
+- Vercel (Deployment)
 
-## Author
+--------------------------------------------------
 
-Design and code are written by the getnextjstemplates design & development team.  
+STRUKTUR REPOSITORY
 
+portofolio-reihan/
+- .github/
+- public/
+- src/
+- .gitignore
+- next.config.ts
+- package.json
+- pnpm-lock.yaml
+- README.md
 
-## License
+--------------------------------------------------
 
- - Design and Code is Copyright &copy; [getnextjstemplates](https://getnextjstemplates.com/)
- - Licensed under [MIT]
- - Distributed by [ThemeWagon](https://themewagon.com)
+FITUR WEBSITE
 
+- Hero & Intro
+- Tentang Saya
+- Skill
+- Pendidikan & Sertifikasi
+- Karya / Project
+- Kontak
+- Download CV / Resume
 
+--------------------------------------------------
 
+CARA MENJALANKAN PROJECT
 
+1. Clone repository
+   git clone https://github.com/shMashiro/portofolio-reihan.git
 
+2. Masuk ke folder project
+   cd portofolio-reihan
+
+3. Install dependencies
+   npm install
+   atau
+   yarn
+   atau
+   pnpm install
+
+4. Jalankan development server
+   npm run dev
+   atau
+   yarn dev
+   atau
+   pnpm dev
+
+5. Buka di browser
+   http://localhost:3000
+
+--------------------------------------------------
+
+DEPLOYMENT
+
+Website ini dideploy menggunakan Vercel.
+Setiap perubahan pada branch utama akan otomatis ter-deploy ke live website.
+
+--------------------------------------------------
+
+KONTAK
+
+Informasi kontak tersedia di website portofolio.
+
+--------------------------------------------------
+
+LISENSI
+
+Silakan sesuaikan lisensi sesuai kebutuhan project.
+
+--------------------------------------------------
+
+Terima kasih sudah mengunjungi repository ini.
